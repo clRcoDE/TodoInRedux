@@ -90840,7 +90840,174 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default2 = MainTodo;
   exports.default = _default2;
 },589,[1,558,19,20,27,30,33,47,197,2,560,563,590,591,593],"newsrc\\MainTodo.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},590,[],"newsrc\\TodoApp.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[10], "react-redux");
+
+  var _action = _$$_REQUIRE(_dependencyMap[11], "./action");
+
+  var _jsxFileName = "c:\\Users\\d.omidi\\Projects\\TodoInRedux\\newsrc\\TodoApp.js";
+  var _components = {
+    TodoApp: {
+      displayName: "TodoApp"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "c:\\Users\\d.omidi\\Projects\\TodoInRedux\\newsrc\\TodoApp.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var TodoApp = function (_Component) {
+    (0, _inherits2.default)(TodoApp, _Component);
+
+    function TodoApp(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, TodoApp);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TodoApp).call(this, props));
+
+      _this.inputer = function (text) {
+        _this.setState({
+          inputs: text
+        });
+      };
+
+      _this.submiter = function () {
+        _this.props.dispatch((0, _action.addTodo)(_this.state.inputs));
+
+        _this.setState({
+          inputs: ''
+        });
+
+        console.log(_this.props);
+      };
+
+      _this.state = {
+        inputs: ''
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(TodoApp, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.KeyboardAvoidingView, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.adder,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          }
+        }, _react.default.createElement(_reactNative.TextInput, {
+          placeholder: "WRITE YOUR TASKS HERE",
+          onChangeText: this.inputer,
+          onSubmitEditing: this.submiter,
+          style: styles.inputStyles,
+          value: this.state.inputs,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          }
+        }), _react.default.createElement(_reactNative.TouchableHighlight, {
+          onPress: this.submiter,
+          style: styles.adderButton,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.adderButtonText,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          }
+        }, "ADD Todo"))));
+      }
+    }]);
+    return TodoApp;
+  }(_react.Component);
+
+  TodoApp = _wrapComponent("TodoApp")(TodoApp);
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "white"
+    },
+    adder: {
+      backgroundColor: "white",
+      flex: 1,
+      justifyContent: "space-evenly",
+      alignItems: "center"
+    },
+    adderButton: {
+      height: 50,
+      width: 150,
+      borderRadius: 100,
+      elevation: 10,
+      backgroundColor: "royalblue",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    adderButtonText: {
+      color: "white",
+      fontSize: 16,
+      fontWeight: "800"
+    },
+    inputStyles: {
+      borderBottomWidth: 2,
+      borderBottomColor: "#bbb"
+    }
+  });
+
+  var mapStateToProps = function mapStateToProps(state) {
+    return {
+      todos: state
+    };
+  };
+
+  var _default2 = (0, _reactRedux.connect)(mapStateToProps)(TodoApp);
+
+  exports.default = _default2;
+},590,[1,558,19,20,27,30,33,47,197,2,563,595],"newsrc\\TodoApp.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -90945,13 +91112,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           }
         }, _react.default.createElement(_reactNative.FlatList, {
           data: this.props.todos,
-          keyExtractor: function keyExtractor(item, index) {
-            return item.keyId;
+          keyExtractor: function keyExtractor(item) {
+            return item.text;
           },
           renderItem: function renderItem(_ref) {
             var item = _ref.item,
                 index = _ref.index;
-            return _react.default.createElement(_reactNative.View, {
+            return _react.default.createElement(_reactNative.TouchableHighlight, {
+              onPress: function onPress() {},
+              underlayColor: "rgba(200,200,200,0.6)",
               style: styles.listElement,
               __source: {
                 fileName: _jsxFileName,
@@ -90963,7 +91132,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
                 fileName: _jsxFileName,
                 lineNumber: 19
               }
-            }, " \u2022 ", item.text));
+            }, item.keyId, " \u2022 ", item.text, " "));
           },
           __source: {
             fileName: _jsxFileName,
@@ -91008,6 +91177,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   exports.default = _default2;
 },593,[1,558,19,20,27,30,33,47,197,2,563],"newsrc\\TodoList.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.addTodo = void 0;
+  getNextId = 0;
+
+  var addTodo = function addTodo(input) {
+    return {
+      type: 'ADD_TODO',
+      text: input,
+      keyId: getNextId++
+    };
+  };
+
+  exports.addTodo = addTodo;
+},595,[],"newsrc\\action.js");
 __r(81);
 __r(0);
 //# sourceMappingURL=index.map

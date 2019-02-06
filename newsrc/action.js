@@ -2,10 +2,10 @@
 getNextId=0
 
 
-export const addTodo = text => {
+export const addTodo = input => {
     return {
         type:'ADD_TODO',
-        text:text,
+        text:input,
         keyId:getNextId++
     }
 }

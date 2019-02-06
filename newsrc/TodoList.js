@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet, FlatList,KeyboardAvoidingView ,Dimensions} from "react-native";
+import { View, Text, StyleSheet, FlatList,KeyboardAvoidingView ,Dimensions, TouchableHighlight} from "react-native";
 
 import { connect } from "react-redux";
 
@@ -13,12 +13,12 @@ class TodoList extends Component {
       <KeyboardAvoidingView style={styles.container}>
         <FlatList
           data={this.props.todos}
-          keyExtractor={(item,index)=>item.keyId}
+          keyExtractor={(item)=>item.text}
           renderItem={({ item, index }) => (
-            <View style={styles.listElement}>
-              <Text style={styles.todoItems}> &#8226; {item.text}</Text>
+            <TouchableHighlight onPress={()=>{}} underlayColor='rgba(200,200,200,0.6)' style={styles.listElement}>
+              <Text style={styles.todoItems}>{item.keyId} &#8226; {item.text} </Text>
               
-            </View>
+            </TouchableHighlight >
           )}
         />
         {/* <View style={styles.lister}>{this.props.todos.map((item,index)=><Text>{item.text}</Text>)}</View> */}
