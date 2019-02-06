@@ -17,7 +17,7 @@ class TodoApp extends Component {
     // this.inputs = "";
 
     this.state={
-        inputs:''
+        inputs:'',
     }
     
   }
@@ -27,10 +27,9 @@ class TodoApp extends Component {
   };
 
   submiter = () => {
-    this.props.dispatch(addTodo(this.state.inputs));
-    this.setState({inputs:''})
+    this.props.dispatch(addTodo(this.state.inputs))
+    this.setState(prev=>({inputs:''}))
     //this.inputs = "";
-    console.log(this.props)
   };
 
   render() {
@@ -40,6 +39,7 @@ class TodoApp extends Component {
         <View style={styles.adder}>
           <TextInput
             placeholder="WRITE YOUR TASKS HERE"
+            placeholderTextColor="#bbb"
             onChangeText={this.inputer}
             onSubmitEditing={this.submiter}
             style={styles.inputStyles}
@@ -49,7 +49,7 @@ class TodoApp extends Component {
             onPress={this.submiter}
             style={styles.adderButton}
           >
-            <Text style={styles.adderButtonText}>ADD Todo</Text>
+            <Text style={styles.adderButtonText}>ADD #{this.props.todos.length+1} Todo</Text>
           </TouchableHighlight>
         </View>
       </KeyboardAvoidingView>
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     fontWeight: "800"
   },
   inputStyles: {
-    borderBottomWidth: 2,
-    borderBottomColor: "#bbb"
+    borderBottomWidth: 4,
+    borderBottomColor: "#ddd"
   }
 });
 

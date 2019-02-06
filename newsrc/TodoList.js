@@ -6,17 +6,27 @@ import { connect } from "react-redux";
 
 // create a component
 
+
 const deviceWidth=Dimensions.get('window').width
+
+
+
 class TodoList extends Component {
+
+
+
   render() {
+    
     return (
       <KeyboardAvoidingView style={styles.container}>
+      <Text style={styles.listHeader}>Your To Do List Goes Here </Text>
         <FlatList
           data={this.props.todos}
           keyExtractor={(item)=>item.text}
           renderItem={({ item, index }) => (
-            <TouchableHighlight onPress={()=>{}} underlayColor='rgba(200,200,200,0.6)' style={styles.listElement}>
-              <Text style={styles.todoItems}>{item.keyId} &#8226; {item.text} </Text>
+            
+            <TouchableHighlight onPress={()=>{}} underlayColor='royalblue' style={styles.listElement}>
+              <Text style={styles.todoItems}> &#8226; {item.text} </Text>
               
             </TouchableHighlight >
           )}
@@ -38,17 +48,28 @@ const styles = StyleSheet.create({
   },
   todoItems:{
       color:'#fff',
-      fontSize:16,
+      fontSize:20,
       fontFamily: 'Roboto',
-      fontWeight:'800'
+      fontWeight:'400',
+      fontStyle:'italic'
   },
   listElement:{
-      height:50,
-      backgroundColor:'rgba(200,200,200,0.25)',
+      height:65,
+      backgroundColor:'rgba(125,200,255,0.2)',
       padding: 20,
-      width:deviceWidth
+      width:deviceWidth,
+      // alignItems:'center',
+      justifyContent: 'center',
 
+  },
+  listHeader:{
+    color: "rgba(125,200,255,0.6)",
+    fontSize: 18,
+    fontWeight: "400",
+    fontFamily:'Roboto',
+    fontStyle: 'italic',
   }
+
 });
 
 const mapStateToProps = state => {

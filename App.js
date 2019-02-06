@@ -9,7 +9,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import TodoApp from './src/Pages/TodoApp'
+// import TodoApp from './src/Pages/TodoApp'
 import MainTodo from './newsrc/MainTodo';
 
 
