@@ -20,7 +20,7 @@
 
 <p> &#9679; A todo app is like a list that used to rememberize and listing  "to Doing Tasks" :)</p>
 
-<p> &#9679; Framework/Libarary used : React Native </p>
+<p> &#9679; Frameworks/Libararies used : React Native / Redux / react-redux  </p>
 
 <p> &#9679; This app inspired by <a href="https://redux.js.org/basics/basic-tutorial"> redux Basic tutorials</a> </p>
 
