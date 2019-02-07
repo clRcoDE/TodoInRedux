@@ -24,7 +24,7 @@
 
 <p> &#9679; This app inspired by <a href="https://redux.js.org/basics/basic-tutorial"> redux Basic tutorials</a> </p>
 
-<p> &#9679; There is a non-redux app version availabe in this <a href="https://github.com/clRcoDE/TodoToRedux/tree/RegularToDo"> repo </a> 
+<p> &#9679; There is a non-redux app version available in this <a href="https://github.com/clRcoDE/TodoToRedux/tree/RegularToDo"> repo </a> 
 
 <p> &#9679; This is early Access Version , new features are in developing</p>
 
