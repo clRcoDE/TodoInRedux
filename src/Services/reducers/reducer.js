@@ -1,4 +1,4 @@
-
+import {ADD_TODO,TOGGLE_TODO} from '../type'
 
 const initialState = {items:[]}
 
@@ -6,7 +6,7 @@ const initialState = {items:[]}
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case 'ADD_TODO':
+      case ADD_TODO:
         return {...state,
           items:[
             ...state.items,
@@ -17,6 +17,8 @@ const reducer = (state = initialState, action) => {
             }
           ]
         }
+        case TOGGLE_TODO:
+        return true
         
       
       default:

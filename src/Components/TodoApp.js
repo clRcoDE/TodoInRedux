@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 // create a component
-import { addTodo } from "./action";
+import { addTodo } from "../Services/actions/action";
 class TodoApp extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +27,9 @@ class TodoApp extends Component {
   };
 
   submiter = () => {
-    
+    if(this.state.inputs.length === 0){
+      return
+    }
     this.props.dispatch(addTodo(this.state.inputs))
     this.setState(prev=>({inputs:''}))
     

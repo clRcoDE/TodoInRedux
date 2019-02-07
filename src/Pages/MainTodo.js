@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
-import TodoApp from './TodoApp';
-import reducer from './reducer'
-import TodoList from './TodoList'
+import TodoApp from '../Components/TodoApp';
+import reducer from '../Services/reducers/reducer'
+import TodoList from '../Components/TodoList'
 export const store = createStore(reducer)
 // create a component
 class MainTodo extends Component {
+    
     render() {
         return (
             <Provider store={store} style={styles.container}>

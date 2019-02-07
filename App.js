@@ -10,7 +10,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 // import TodoApp from './src/Pages/TodoApp'
-import MainTodo from './newsrc/MainTodo';
+// import MainTodo from './newsrc/MainTodo';
 
 
 export default class App extends Component {
@@ -18,7 +18,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
        {/* <TodoApp/> */}
-       <MainTodo/>
+       {/* <MainTodo/> */}
       </View>
     );
   }
