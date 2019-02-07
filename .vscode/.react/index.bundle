@@ -88500,7 +88500,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = void 0;
+  exports.default = exports.store = void 0;
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
@@ -88549,6 +88549,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }
 
   var store = (0, _redux.createStore)(_reducer.default);
+  exports.store = store;
 
   var MainTodo = function (_Component) {
     (0, _inherits2.default)(MainTodo, _Component);
@@ -90507,13 +90508,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 40
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.adder,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 41
           }
         }, _react.default.createElement(_reactNative.TextInput, {
           placeholder: "WRITE YOUR TASKS HERE",
@@ -90524,20 +90525,20 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           value: this.state.inputs,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 42
           }
         }), _react.default.createElement(_reactNative.TouchableHighlight, {
           onPress: this.submiter,
           style: styles.adderButton,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 50
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.adderButtonText,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 54
           }
         }, "ADD #", this.props.todos.length + 1, " Todo"))));
       }
@@ -90580,7 +90581,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var mapStateToProps = function mapStateToProps(state) {
     return {
-      todos: state
+      todos: state.items
     };
   };
 
@@ -90599,6 +90600,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return {
       type: 'ADD_TODO',
       text: input,
+      isCompleted: false,
       keyId: getNextId++
     };
   };
@@ -90615,7 +90617,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _toConsumableArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
 
-  var initialState = [];
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var initialState = {
+    items: []
+  };
 
   var reducer = function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -90623,10 +90629,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     switch (action.type) {
       case 'ADD_TODO':
-        return [].concat((0, _toConsumableArray2.default)(state), [{
-          text: action.text,
-          keyId: action.keyId
-        }]);
+        return (0, _objectSpread2.default)({}, state, {
+          items: [].concat((0, _toConsumableArray2.default)(state.items), [{
+            text: action.text,
+            keyId: action.keyId,
+            isCompleted: action.isCompleted
+          }])
+        });
 
       default:
         return state;
@@ -90635,7 +90644,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = reducer;
   exports.default = _default;
-},586,[1,15],"newsrc\\reducer.js");
+},586,[1,15,44],"newsrc\\reducer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -90705,7 +90714,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 21
           }
-        }, _react.default.createElement(_reactNative.Text, {
+        }, this.props.todos.length < 1 && _react.default.createElement(_reactNative.Text, {
           style: styles.listHeader,
           __source: {
             fileName: _jsxFileName,
@@ -90779,8 +90788,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     listHeader: {
       color: "rgba(125,200,255,0.6)",
-      fontSize: 18,
-      fontWeight: "400",
+      fontSize: 20,
+      fontWeight: "200",
       fontFamily: 'Roboto',
       fontStyle: 'italic'
     }
@@ -90788,7 +90797,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var mapStateToProps = function mapStateToProps(state) {
     return {
-      todos: state
+      todos: state.items
     };
   };
 

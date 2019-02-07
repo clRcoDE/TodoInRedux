@@ -19,13 +19,13 @@ class TodoList extends Component {
     
     return (
       <KeyboardAvoidingView style={styles.container}>
-      <Text style={styles.listHeader}>Your To Do List Goes Here </Text>
+      {this.props.todos.length < 1 && <Text style={styles.listHeader}>Your To Do List Goes Here </Text>}
         <FlatList
         // inverted
           data={this.props.todos}
           keyExtractor={(item)=>item.text}
           ref={ref => this.flatList = ref}
-   onContentSizeChange={() => this.flatList.scrollToEnd({animated: true})}
+          onContentSizeChange={() => this.flatList.scrollToEnd({animated: true})}
           renderItem={({ item, index }) => (
             
             <TouchableHighlight onPress={()=>{}} underlayColor='royalblue' style={styles.listElement}>
@@ -68,17 +68,18 @@ const styles = StyleSheet.create({
   },
   listHeader:{
     color: "rgba(125,200,255,0.6)",
-    fontSize: 18,
-    fontWeight: "400",
+    fontSize: 20,
+    fontWeight: "200",
     fontFamily:'Roboto',
     fontStyle: 'italic',
+    // height:50
   }
 
 });
 
 const mapStateToProps = state => {
   return {
-    todos: state
+    todos: state.items
   };
 };
 //make this component available to the app

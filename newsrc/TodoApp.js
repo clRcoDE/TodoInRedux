@@ -27,8 +27,10 @@ class TodoApp extends Component {
   };
 
   submiter = () => {
+    
     this.props.dispatch(addTodo(this.state.inputs))
     this.setState(prev=>({inputs:''}))
+    
     //this.inputs = "";
   };
 
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
 //make this component available to the app
 const mapStateToProps = state => {
   return {
-    todos: state
+    todos: state.items
   };
 };
 //make this component available to the app

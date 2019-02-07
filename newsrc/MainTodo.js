@@ -6,7 +6,7 @@ import {Provider} from 'react-redux'
 import TodoApp from './TodoApp';
 import reducer from './reducer'
 import TodoList from './TodoList'
-const store = createStore(reducer)
+export const store = createStore(reducer)
 // create a component
 class MainTodo extends Component {
     render() {
