@@ -10,29 +10,28 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 // create a component
-import { addTodo } from "../Services/actions/action";
+import { addTodo, addTodoAction, setItems } from "../Services/actions/action";
 class TodoApp extends Component {
   constructor(props) {
     super(props);
     // this.inputs = "";
 
-    this.state={
-        inputs:'',
-    }
-    
+    this.state = {
+      inputs: ""
+    };
   }
   inputer = text => {
-    this.setState({inputs:text})
+    this.setState({ inputs: text });
     // text=''
   };
 
   submiter = () => {
-    if(this.state.inputs.length === 0){
-      return
+    if (this.state.inputs.length === 0) {
+      return;
     }
-    this.props.dispatch(addTodo(this.state.inputs))
-    this.setState(prev=>({inputs:''}))
-    
+    this.props.dispatch(setItems(this.state.inputs));
+    this.setState(prev => ({ inputs: "" }));
+
     //this.inputs = "";
   };
 
@@ -53,7 +52,9 @@ class TodoApp extends Component {
             onPress={this.submiter}
             style={styles.adderButton}
           >
-            <Text style={styles.adderButtonText}>ADD #{this.props.todos.length+1} Todo</Text>
+            <Text style={styles.adderButtonText}>
+              {/* ADD #{this.props.todos.length + 1} Todo */}
+            </Text>
           </TouchableHighlight>
         </View>
       </KeyboardAvoidingView>

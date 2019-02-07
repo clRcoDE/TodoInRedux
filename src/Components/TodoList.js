@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, FlatList,KeyboardAvoidingView ,Dimensions, TouchableHighlight} from "react-native";
 
 import { connect } from "react-redux";
-
+import {setToggle} from '../Services/actions/action'
 // create a component
 
 
@@ -13,13 +13,15 @@ const deviceWidth=Dimensions.get('window').width
 
 class TodoList extends Component {
 
-
+changeActivity=index=>{
+this.props.dispatch(setToggle(index))
+}
 
   render() {
     
     return (
       <KeyboardAvoidingView style={styles.container}>
-      {this.props.todos.length < 1 && <Text style={styles.listHeader}>Your To Do List Goes Here </Text>}
+      {/* {this.props.todos.length < 1 && <Text style={styles.listHeader}>Your To Do List Goes Here </Text>} */}
         <FlatList
         // inverted
           data={this.props.todos}
@@ -28,7 +30,7 @@ class TodoList extends Component {
           onContentSizeChange={() => this.flatList.scrollToEnd({animated: true})}
           renderItem={({ item, index }) => (
             
-            <TouchableHighlight onPress={()=>{}} underlayColor='royalblue' style={styles.listElement}>
+            <TouchableHighlight onPress={this.changeActivity.bind(this, index)} underlayColor='royalblue' style={styles.listElement}>
               <Text style={styles.todoItems}> &#8226; {item.text} </Text>
               
             </TouchableHighlight >
