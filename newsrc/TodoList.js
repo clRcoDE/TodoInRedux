@@ -21,8 +21,11 @@ class TodoList extends Component {
       <KeyboardAvoidingView style={styles.container}>
       <Text style={styles.listHeader}>Your To Do List Goes Here </Text>
         <FlatList
+        // inverted
           data={this.props.todos}
           keyExtractor={(item)=>item.text}
+          ref={ref => this.flatList = ref}
+   onContentSizeChange={() => this.flatList.scrollToEnd({animated: true})}
           renderItem={({ item, index }) => (
             
             <TouchableHighlight onPress={()=>{}} underlayColor='royalblue' style={styles.listElement}>
@@ -41,10 +44,11 @@ class TodoList extends Component {
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 3,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: 'royalblue',
+    elevation:10
   },
   todoItems:{
       color:'#fff',
