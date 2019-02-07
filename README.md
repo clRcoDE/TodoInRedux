@@ -2,7 +2,7 @@
 
 #### A Todo Application in React Native and Redux
 
-
+<br/>
 
 <a href="#description">	Description</a><br/>
 <a href="#file-structure"> File Structure</a><br/>
