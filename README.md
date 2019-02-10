@@ -2,11 +2,19 @@
 
 #### A Todo Application in React Native and Redux
 
+
+
+<p><i>pre alpha v0.11</i></p>
+
+
 <br/>
 
-<a href="#description">	Description</a><br/>
-<a href="#file-structure"> File Structure</a><br/>
-<a href="#simple-abilities"> Simple Abilities</a><br/>
+<br/>
+
+
+<a href="#description">&#8226;	description</a><br/>
+<a href="#file-structure">&#8226; file structure</a><br/>
+<a href="#simple-features">&#8226; simple features</a><br/>
 
 <br/>
 <br/>
@@ -24,9 +32,11 @@
 
 <p> &#9679; This app inspired by <a href="https://redux.js.org/basics/basic-tutorial"> redux Basic tutorials</a> </p>
 
-<p> &#9679; There is a non-redux app version available in this <a href="https://github.com/clRcoDE/TodoToRedux/tree/RegularToDo"> repo </a> 
+<p> &#9679; There is a non-redux version available in this <a href="https://github.com/clRcoDE/TodoToRedux/tree/RegularToDo"> repo </a> 
 
-<p> &#9679; This is early Access Version , new features are in developing</p>
+<p> &#9679; This is <i>pre alpha version</i> - <i>new versions with new features coming soon</i></p>
+
+
 
 <br/>
 <br/>
@@ -68,7 +78,7 @@
 <br/>
 <br/>
 
-### Simple Abilities
+### Simple features
 <hr/>
 
 <p> &#8226; <b>adding new items </b>/<i> avoid adding when input is empty - with  touchable item list</i> </p>
