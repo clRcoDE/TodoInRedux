@@ -4,6 +4,7 @@
 
 
 
+<<<<<<< HEAD
 <p><i>pre alpha v0.11</i></p>
 
 
@@ -15,6 +16,11 @@
 <a href="#description">&#8226;	description</a><br/>
 <a href="#file-structure">&#8226; file structure</a><br/>
 <a href="#simple-features">&#8226; simple features</a><br/>
+=======
+<a href="#description">	Description</a><br/>
+<a href="#file-structure"> File Structure</a><br/>
+<a href="#simple-abilities"> Simple Abilities</a><br/>
+>>>>>>> cf94a1fe7c6c163763f161b98ca66989fdc196a9
 
 <br/>
 <br/>
@@ -28,6 +34,7 @@
 
 <p> &#9679; A todo app is like a list that used to rememberize and listing  "to Doing Tasks" :)</p>
 
+<<<<<<< HEAD
 <p> &#9679; Frameworks/Libararies used : React Native / Redux / react-redux  </p>
 
 <p> &#9679; This app inspired by <a href="https://redux.js.org/basics/basic-tutorial"> redux Basic tutorials</a> </p>
@@ -37,6 +44,15 @@
 <p> &#9679; This is <i>pre alpha version</i> - <i>new versions with new features coming soon</i></p>
 
 
+=======
+<p> &#9679; Framework/Libarary used : React Native </p>
+
+<p> &#9679; This app inspired by <a href="https://redux.js.org/basics/basic-tutorial"> redux Basic tutorials</a> </p>
+
+<p> &#9679; There is a non-redux app version availabe in this <a href="https://github.com/clRcoDE/TodoToRedux/tree/RegularToDo"> repo </a> 
+
+<p> &#9679; This is early Access Version , new features are in developing</p>
+>>>>>>> cf94a1fe7c6c163763f161b98ca66989fdc196a9
 
 <br/>
 <br/>
@@ -78,7 +94,11 @@
 <br/>
 <br/>
 
+<<<<<<< HEAD
 ### Simple features
+=======
+### Simple Abilities
+>>>>>>> cf94a1fe7c6c163763f161b98ca66989fdc196a9
 <hr/>
 
 <p> &#8226; <b>adding new items </b>/<i> avoid adding when input is empty - with  touchable item list</i> </p>
