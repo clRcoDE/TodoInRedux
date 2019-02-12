@@ -6,7 +6,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableHighlight,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Image
 } from "react-native";
 import { connect } from "react-redux";
 // create a component
@@ -53,9 +54,12 @@ class TodoApp extends Component {
             style={styles.adderButton}
           >
             <Text style={styles.adderButtonText}>
-              {/* ADD #{this.props.todos.length + 1} Todo */}
+              ADD #{this.props.todos.length + 1} Todo
+            
             </Text>
           </TouchableHighlight>
+
+          
         </View>
       </KeyboardAvoidingView>
     );

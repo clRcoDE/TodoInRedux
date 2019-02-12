@@ -29,10 +29,12 @@ export const setToggle = index =>{
 }
 
 
-const ToggleTodoAction = index =>{
+const ToggleTodoAction = index => {
     return{
         type: TOGGLE_TODO,
-        keyId:index
+        keyId:index,
+    
+        
     }
 }
 

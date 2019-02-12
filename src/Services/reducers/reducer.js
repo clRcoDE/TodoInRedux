@@ -13,7 +13,6 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return {
-        ...state,
         items: [
           ...state.items,
           {
@@ -24,12 +23,10 @@ const reducer = (state = initialState, action) => {
         ]
       }
     case TOGGLE_TODO:
-      return state.items.map(todoItem => {
-        (todoItem.KeyId === action.KeyId)
-        ? {...todoItem, completed: !todoItem.completed}
-        : todoItem
-      })
-
+      return {
+        ...state,
+        items : state.items.map(todoItem => todoItem.keyId === action.keyId ? { ...todoItem, isCompleted: !todoItem.isCompleted }   : { ...todoItem })
+      }
 
 
 
